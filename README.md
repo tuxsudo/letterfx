@@ -8,4 +8,4 @@ example usage:
     $(element).letterfx({"fx":"fly-right fly-bottom spin"})
 
 
-[More Info](http://tuxsudo.com/code/projects/letterfx)
+[More Info](http://tuxsudo.com/code/project/letterfx)
