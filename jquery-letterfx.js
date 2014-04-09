@@ -2,7 +2,7 @@
 
     "use strict";
 
-    var wlc = window.console.log;
+    var wcl = window.console.log;
 
     var LetterFx = function (element, options) {
 
@@ -57,10 +57,20 @@
             options.onLetterComplete( $(this), lfx.$element, lfx );
             lfx.notifyFXEnd( );
 
-            if(options.destroy){
+            switch(options.letter_end){
+              case "destroy":
                 $(this).remove();
-            }
-            else if(options.restore==true){
+                break;
+
+              case "rewind":
+                lfx.applyLetterFx( $(this), options.timing, options.css.letters.after, options.css.letters.before );
+                break;
+
+              case "stay":
+                break;
+
+              // restore
+              default:
                 $(this).replaceWith( $(this).text() );
             }
 
@@ -74,14 +84,20 @@
 
         clearTimeout(this.killswitch);
 
-        if(this.options.destroy==true){
-            this.$element.remove();
-        }
+          switch(this.options.element_end){
+            case "destroy":
+              this.$element.remove();
+              break;
 
-        else if(this.options.restore){
-            this.$element.html( this.original_html );
-            this.$element.removeClass( this.options.css.element.after );
-        }
+            case "stay":
+              break;
+
+            // restore
+            default:
+              this.$element.html( this.original_html );
+              this.$element.removeClass( this.options.css.element.after );
+              break;
+          }
 
     }
 
@@ -277,7 +293,21 @@ $.fn.letterfx.defaults = {
   onElementComplete:function($element, LetterFXObj){},
 
 
+  // what to do when a letter completes its animation.
+  // options include
+  //    restore: return letter to plain text (default)
+  //    destroy: get rid of the letter.
+  //    stay: leave it as is.
+  //    rewind: reverse the animation
+  letter_end:"restore",
 
+
+  // what to do when the entire element has completed all its letter effects
+  // options include:
+  //    restore: return element to its pre-fx state (default)
+  //    stay: do nothing
+  //    destroy: get rid of the element... FOREVER
+  element_end:"restore",
 
   // Restore container element back to original state.
   // options: true, false, "element" ("element" waits until all letters complete fx before restoring)

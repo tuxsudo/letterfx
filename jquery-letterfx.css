@@ -66,6 +66,22 @@
     text-shadow:0;
 }
 
+.letterfx-wave-container .letterfx
+{
+    position:relative;
+}
+
+.letterfx-wave-before
+{
+    bottom:0;
+}
+
+.letterfx-wave-after{
+    bottom:15px;
+}
+
+
+
 
 /* FLY FX */
 .letterfx-fly-left-container .letterfx,
