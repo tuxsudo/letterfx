@@ -2,8 +2,6 @@
 
     "use strict";
 
-    var wcl = window.console.log;
-
     var LetterFx = function (element, options) {
 
         this.options = $.extend({}, $.fn.letterfx.defaults, options);
