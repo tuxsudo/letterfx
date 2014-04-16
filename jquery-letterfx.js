@@ -93,7 +93,7 @@
             // restore
             default:
               this.$element.html( this.original_html );
-              this.$element.removeClass( this.options.css.element.after );
+              this.$element.removeClass( this.options.css.element.base ).removeClass(this.options.css.element.after);
               break;
           }
 
