@@ -7,6 +7,7 @@
     transition: all 1s; -ms-transition: all 1s; -webkit-transition: all 1s;
 }
 
+/* Spin FX */
 .letterfx-spin-before{
     transform:rotate(3600deg); -ms-transform:rotate(3600deg); -webkit-transform:rotate(3600deg);
 }
@@ -15,10 +16,13 @@
     transform:none;
 }
 
+/* Fade FX */
 .letterfx-fade-before{
   opacity: 0;
 }
 
+
+/* Grow FX */
 .letterfx-grow-before{
     transform:scale(0,0); -ms-transform:scale(0,0); -webkit-transform:scale(0,0);
 }
@@ -27,6 +31,8 @@
     transform:none;
 }
 
+
+/* Smear FX */
 .letterfx-smear-before{
     color: transparent;
     text-shadow:-1px -1px 25px transparent;
@@ -39,10 +45,6 @@
 }
 
 /* Fall FX */
-.letterfx-fall-container .letterfx{
-    position: relative;
-}
-
 .letterfx-fall-before
 {
     visibility: hidden;
@@ -54,7 +56,7 @@
     text-shadow:0;
 }
 
-
+/* Swirl FX */
 .letterfx-swirl-before
 {
     visibility: hidden;
@@ -66,6 +68,8 @@
     text-shadow:0;
 }
 
+
+/* Wave FX */
 .letterfx-wave-container .letterfx
 {
     position:relative;
@@ -79,7 +83,6 @@
 .letterfx-wave-after{
     bottom:15px;
 }
-
 
 
 
